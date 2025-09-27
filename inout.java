@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class inout {
+public class InOut {
     public static void main(String[] args){
         System.out.println("Введите имя: ");
         Scanner scan = new Scanner(System.in);
