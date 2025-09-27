@@ -1,0 +1,23 @@
+Работа с консолью осуществляется с помощью класса System и его статических полей in, out и err.
+
+// Печать данных в консоли
+System.out.println('Привет!');
+// Ввод символа из консоли
+// Требуется обработка исключительной ситуации
+try {
+    int x = System.in.read();
+} catch (IOException e) {
+    // обработка ошибки
+}
+// Ввод символа из консоли
+import java.io.IOException;
+// Требуется обработка исключительной ситуации
+try {
+    int x = System.in.read();
+} catch (IOException e) {
+    // обработка ошибки
+}
+// Ввод строки из консоли
+import java.util.Scanner;
+Scanner scan = new Scanner(System.in);
+String name = scan.next();
