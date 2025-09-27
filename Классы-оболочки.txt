@@ -1,0 +1,41 @@
+Пакет java.lang содержит классы-оболочки (wrapper class):
+
+Boolean
+Character
+Integer
+Byte
+Short
+Long
+Float
+Double
+Каждый из экземпляров этих классов хранит в себе значение соответствующего базового типа.
+
+Классы-оболочки реализуют интерфейс Comparable<T>, содержащий метод int compareTo(T obj), который позволяет сравнивать объекты одного типа между собой.
+
+Для создания экземпляров классов-оболочек используются статические методы:
+
+valueOf(type v), где type - базовый тип
+valueOf(String s)
+parseType(String s)
+decode(String s)
+Integer value1 = Integer.valueOf(12);
+Integer value2 = Integer.valueOf("12");
+Integer value3 = Integer.parseInt("12");
+Integer value4 = Integer.decode("012");
+Конструкторы для создания экземпляров классов-объектов не применяются.
+Для преобразования значения базового типа в строку можно использоваться следующие операции (на примере типа int):
+
+int value = 12;
+String s1 = Integer.toString(value);
+String s2 = String.valueOf(value);
+Автоупаковка (boxing) - это процесс автоматической инкапсуляции значений базовых типов в соотвествующие объекты-оболочки.
+
+Integer i = 12; // boxing
+В некоторых случаях тип значения следует указать явно.
+Float f1 = 12; // ошибка
+Float f2 = (float) 12;
+Float f3 = 12F;
+Автораспаковка (unboxing) - это процесс "извлечения" из объекта-оболочки значения базового типа.
+
+Integer i = 12; // boxing
+int j = i; // unboxing
