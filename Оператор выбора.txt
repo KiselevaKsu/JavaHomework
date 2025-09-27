@@ -1,0 +1,14 @@
+Варианты использования:
+
+int i = 0;
+switch(value) {
+    case 1:
+        i = 1; // если value == 1
+        break;
+    case 2:
+        i = 2; // если value == 2
+        break;
+    default:
+        i = 3; // если value != 1 и value != 2
+        break;
+}
