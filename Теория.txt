@@ -1,0 +1,62 @@
+Интерфейс (interface) - именованный набор методов и полей.
+
+Классы могут реализовывать любой количество интерфейсов, используя ключевое слово implements.
+
+public class Class implements Interface1, Interface2 {
+  ...
+}
+Сами интерфейсы также могут наследовать любое количество интерфейсов, используя ключевое слова extends.
+
+public interface Interface extends Interface1, Interface2 {
+  ...
+}
+Все объявленные в интерфейсе методы трактуются как public abstract. Все объявленные в интерфейсе поля трактуются как public static final и должны быть проинициализированы.
+
+Если класс, который реализует интерфейс, определяет не все его методы, то такой класс должен быть объявлен как abstract.
+
+Параметризация интерфейсов происходит по тем же правилам, что и параметризация классов.
+
+public interface Interface<T extends AbstractClass> {
+  void func(T item);
+}
+
+public abstract class AbstractClass {
+  ...
+}
+
+public class Class1 extends AbstractClass {
+  ...
+}
+
+public class Class2 implements Interface<Class1> {
+  ...
+}
+
+Аннотации — это метатеги, а по сути дополнительные модификаторы, которые добавляются к коду и применяются к объявлению пакетов, классов, конструкторов, методов, полей, параметров и локальных переменных.
+
+Аннотации можно создать самостоятельно.
+
+@Target(ElementType.TYPE)
+public @interface BaseAction {
+    int level();
+}
+
+@BaseAction(level=2)
+public class Base {
+  public void do() {
+    Class clazz = Base.class;
+    BaseAction action = (BaseACtion) clazz.getAnnotation(BaseAction.class);
+    System.out.println(action.level());
+  }
+}
+BaseAction - это аннотация.
+
+Она объявляется через ключевое слово @interface.
+
+Встроенная аннотация @Target используется, чтобы указать в каких случаях можем использовать созданную аннотация - ElementType.TYPE, т.е. для типов, например, классов.
+
+В аннотации объявлен метода-член: int level().
+
+При использовании аннотации нужно задать значение для ее метода-члена: @BaseAction(level=2)
+
+Внутри метода do() показано, как получить доступ к данным аннотации.
